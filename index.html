@@ -137,6 +137,35 @@
   .slider img.active {
     display: block;
     }
+    
+    .card img {
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card img:hover {
+      transform: scale(1.05);
+    }
+
+
+    #popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    #popup img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px;
+    }
   </style>
 </head>
 <body>
@@ -152,9 +181,9 @@
   <div class="card">
 
     <div class="slider">
-      <img src="10k.jpeg" class="active">
-      <img src="10K-pinkstar.jpeg" >
-      <img src="10K-whitestar.jpeg" >
+      <img src="10k.jpeg" onclick="openImage(this.src)">
+      <img src="10K-pinkstar.jpeg" onclick="openImage(this.src)">
+      <img src="10K-whitestar.jpeg" onclick="openImage(this.src)">
     </div>
 
     <div class="card-content">
@@ -167,10 +196,10 @@
   <div class="card">
 
     <div class="slider">
-    <img src="15K.jpeg" class="active">
-    <img src="15K-pink.jpeg" >
-    <img src="15K-silver.jpeg" >
-    <img src="15K-star.jpeg" >
+    <img src="15K.jpeg" onclick="openImage(this.src)">
+    <img src="15K-pink.jpeg" onclick="openImage(this.src)">
+    <img src="15K-silver.jpeg" onclick="openImage(this.src)">
+    <img src="15K-star.jpeg" onclick="openImage(this.src)">
     </div>
 
     <div class="card-content">
@@ -183,9 +212,9 @@
   <div class="card">
 
     <div class="slider">
-      <img src="25K.jpeg" class="active">
-      <img src="25K-bintang.jpeg" >
-      <img src="25K-obeng.jpeg" >
+      <img src="25K.jpeg" onclick="openImage(this.src)">
+      <img src="25K-bintang.jpeg" onclick="openImage(this.src)">
+      <img src="25K-obeng.jpeg" onclick="openImage(this.src)">
     </div>
 
     <div class="card-content">
@@ -201,6 +230,11 @@
   <p>© 2026 DearieBits | Handmade with ❤️</p>
 
 </footer>
+
+<div id="popup" onclick="closeImage()">
+  <img id="popup-img">
+</div>
+
 <div id="popup" onclick="closeImage()" style="
   display:none;
   position:fixed;
